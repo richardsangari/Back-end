@@ -18,16 +18,20 @@ app.use(cors({
 
 
 // Log using Morgan
+// Morgan akan mencatat log
 app.use(morgan('combined'), (req, res, next) => {
     next();
 });
 
 // GET users
+// Get akan memberikan list data users yang ingin kita ambil
 app.get('/users', (req, res) => {
     res.send(users);
 });
 
 // GET users name
+//GET ini akan meberikan data user berdasarkan permintaan dari client
+// cth : Client ingin mengambil data dari Bob maka yang akan di tampilka hanya data dari user bernama Bob saja
 app.get('/users/:name', (req, res) => {
     const data = users.filter(r => r.name.toLowerCase() === req.params.name.toLowerCase());
 
@@ -45,6 +49,7 @@ app.get('/users/:name', (req, res) => {
 });
 
 // POST users
+// Dengan Metode POST akan menambakan record baru,
 app.post('/users', (req, res) => {
     const {name} = req.body;
 
