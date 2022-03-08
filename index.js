@@ -22,7 +22,8 @@ app.use(morgan('combined'), (req, res, next) => {
     next();
 });
 
-// GET users
+// GET users 
+// Endpoint ini bertugas untuk memberikan list data users
 app.get('/users', (req, res) => {
     res.send(users);
 });
