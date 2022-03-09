@@ -34,7 +34,7 @@ app.get('/users/:name', (req, res) => {
 
     if(data.length === 0) {
         res.send(JSON.stringify({
-            message: "Data user tidak ditemukan."
+            message: "Data user not found."
         }));
     }
     else {
