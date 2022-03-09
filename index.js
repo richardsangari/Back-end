@@ -71,7 +71,8 @@ app.post('/users', (req, res) => {
     }
 });
 
-// PUT users name
+// PUT users name\
+// endpoint ini bertugas untuk melakukan edit data pada data yang dipilih melalui parameter :name
 app.put('/users/:name', (req, res) => {
     const {name} = req.body;
     
